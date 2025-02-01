@@ -37,7 +37,11 @@ pipeline {
             }
         }
 
-       
+       stage('Quality Gate Check') {
+            steps {
+                waitForQualityGate abortPipeline: false, credentialsId: 'jenkins-sonar-token'
+            }
+        }
 
         stage('Install Dependencies') {
             steps {
