@@ -1,9 +1,6 @@
 name: Amazon Clone CICD Pipeline
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
     types: [reopened,closed]
     branches:
@@ -91,7 +88,7 @@ jobs:
         run: npm ci
 
       - name: Run OWASP Dependency Check
-        uses: jeremylong/gh-action-owasp-dependency-check@v2
+        uses: dependency-check-action@3.0.0
         with:
           project: amazon-clone
           path: './'
