@@ -1,6 +1,9 @@
 name: Amazon Clone CICD Pipeline
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
     types: [reopened,closed]
     branches:
